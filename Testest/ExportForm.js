@@ -3,16 +3,13 @@ $(function() {
 		event.preventDefault();
 		console.log("^_^");
 
-		/* $.ajax({
+		$.ajax({
 			type: 'POST',
-			url: 'formExportController', // url to the php file
-			data: ['create', 'zip'], // change that
-			success: function () {
-
+			url: 'formExportController.php', // url to the php file
+			data: {functionname: 'test'}, // change that
+			success: function (data) {
+				console.log(data, data.length);
 			}
-			error: function() {
-
-			}
-		}); */
+		});
 	});
 });

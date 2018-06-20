@@ -8,7 +8,8 @@ $(function() {
 			url: 'formExportController.php', // url to the php file
 			data: {functionname: 'test'}, // change that
 			success: function (data) {
-				console.log(data, data.length);
+				console.log(data);
+				console.log(data.length);
 			}
 		});
 	});

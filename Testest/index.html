@@ -2,15 +2,25 @@
 <html>
 	<head>
 		<title>Testest</title>
-		<script type = "text/javascript" src = "jquery-1.9.1.min.js"></script>
-		<script type = "text/javascript" src = "ExportForm.js"></script>
 	</head>
 	<body>
-		<p class = "Txt_test">This is a test Paragraph.</p>
-		<!-- <button id="buttonZIP">Click me !</button> -->
-		<a href = "#" target = "blank" id = "buttonZIP" rel = "zip">ZIP</a>
-		<!-- 
-			<a href="#" target="_blank" class="buttonZIP buttonsExport" rel="zip"><span>ZIP</span></a> 
-		-->
+		<script src = "scripts/jquery-1.9.1.min.js"></script>
+		<script src = "scripts/mustache.js"></script>
+		<script src = "scripts/sweetalert.min.js"></script>
+		<script src = "scripts/main.js"></script>
+
+		<template id = "Template">
+			<h1>I'm <b>{{name}}</b></h1> </br>
+			and I love <b>{{food}}</b>.
+		</template>
+
+		<div id = "Content">
+		</div>
+
+		</br></br>
+		<button id = "ChangePerson">Click me !</button>
+
+		</br></br>
+		<a href = "Data/pepe_feels_bad_man.jpg"" id = "ShowBigPicture"><img src="Data/pepe_feels_bad_man.jpg" width = 30%></a>
 	</body>
 </html>

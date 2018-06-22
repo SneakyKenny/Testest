@@ -27,19 +27,21 @@ $(function() {
 
 		swal({
 			icon: fileName,
-			button: {
+			confirmButton: {
 				text: "Enregistrer"
 			}
-		}).then(function () {
-			var link = document.createElement("a");
+		}).then((value) => {
+		  if (value) {
+				var link = document.createElement("a");
 
-		    link.setAttribute("href", fileName);
+			    link.setAttribute("href", fileName);
 
-		    fileName = fileName.substr(fileName.lastIndexOf('/') + 1);
+			    fileName = fileName.substr(fileName.lastIndexOf('/') + 1);
 
-		    link.setAttribute("download", fileName);
+			    link.setAttribute("download", fileName);
 
-		    link.click();
+			    link.click();
+			}
 		});
 	});
 });

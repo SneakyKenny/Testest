@@ -1,31 +1,21 @@
-$(function() {
-	var template = $("#Template").html();
+$( function () {
+	$( "body" ).on ( "click", "#ShowBigPicture", function ( event ) {
+		event.preventDefault ();
 
-	var Kenny = {
-		name: "Kenny",
-		food: "chocolate"
-	};
-
-	var Dominique = {
-		name: "Dominique",
-		food: "Bourger"
-	};
-
-	$("#Content").html(Mustache.render(template, Kenny));
-
-	$("body").on("click", "#ChangePerson", function () {
-		$("#Content").html(Mustache.render(template, Dominique));
-	});
-
-
-	$("body").on("click", "#ShowBigPicture", function (event) {
-		event.preventDefault();
-
-		var self = $(this);
+		var self = $( this );
 		
-		var fileName = String(self.attr("href"));
+		var fileName = String ( self.attr ( "href" ) );
 
-		swal({
+		var mobileSwal = {
+			imageUrl: fileName,
+			showConfirmButton: true,
+			focusConfirm: true,
+			confirmButtonText: "Sauvegarder l'image.",
+			showCloseButton: true,
+			grow: 'fullscreen'
+		};
+
+		var pcSwal = {
 			imageUrl: fileName,
 			showConfirmButton: true,
 			focusConfirm: true,
@@ -34,21 +24,23 @@ $(function() {
 			showCancelButton: true,
 			cancelButtonText: "Annuler.",
 			cancelButtonColor: '#d33',
-			grow: 'fullscreen'
-		}).then((result) => {
-		    if (result.value) {
-				var link = document.createElement("a");
+			width: $(window).width() * 2 / 3
+		};
 
-			    link.setAttribute("href", fileName);
+		var swalUsed = $( window ).width () <= 720 ? mobileSwal : pcSwal;
+		
+		swal( swalUsed ).then( ( result ) => {
+		    if ( result.value ) {
+				var link = document.createElement( "a" );
 
-			    fileName = fileName.substr(fileName.lastIndexOf('/') + 1);
+			    link.setAttribute( "href", fileName );
 
-			    link.setAttribute("download", fileName);
+			    fileName = fileName.substr ( fileName.lastIndexOf ( '/' ) + 1 );
 
-			    link.click();
+			    link.setAttribute ( "download", fileName );
+
+			    link.click ();
 			}
 		});
 	});
 });
-
-

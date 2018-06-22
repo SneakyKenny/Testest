@@ -26,12 +26,14 @@ $(function() {
 		var fileName = String(self.attr("href"));
 
 		swal({
-			icon: fileName,
-			confirmButton: {
-				text: "Enregistrer"
-			}
-		}).then((value) => {
-		  if (value) {
+			imageUrl: fileName,
+			showConfirmButton: true,
+			showCloseButton: false,
+			focusConfirm: true,
+			confirmButtonText: "Sauvegarder l'image.",
+			width: '1280px'
+		}).then((result) => {
+		    if (result.value) {
 				var link = document.createElement("a");
 
 			    link.setAttribute("href", fileName);

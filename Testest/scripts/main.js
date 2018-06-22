@@ -28,10 +28,13 @@ $(function() {
 		swal({
 			imageUrl: fileName,
 			showConfirmButton: true,
-			showCloseButton: false,
 			focusConfirm: true,
 			confirmButtonText: "Sauvegarder l'image.",
-			width: '1280px'
+			showCloseButton: true,
+			showCancelButton: true,
+			cancelButtonText: "Annuler.",
+			cancelButtonColor: '#d33',
+			grow: 'fullscreen'
 		}).then((result) => {
 		    if (result.value) {
 				var link = document.createElement("a");

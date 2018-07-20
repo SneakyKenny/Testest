@@ -11,8 +11,9 @@ $usr = checkUser();
 $mysqli = new mysqli($kga['server_hostname'], $kga['server_username'], $kga['server_password'], $kga['server_database']);
 
 if ($_GET['action'] == 'getPcts') {
+    
     $filter = MySQL::SQLValue($usr['usr_grp'], MySQL::SQLVALUE_NUMBER);
-
+    
     $THEQUERY = "SELECT * FROM grp_pct
                  JOIN pct ON grp_pct.pct_ID = pct.pct_ID
                  WHERE grp_pct.grp_ID=" . $filter;
@@ -32,6 +33,7 @@ if ($_GET['action'] == 'getPcts') {
         $main[$row['pct_ID']] = $childs;
 
     }
+
     $main = json_encode($main);
 
 }

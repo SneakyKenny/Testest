@@ -16,11 +16,11 @@
                     // charger le loader du gantt, l'initialiser et ajouter les projets
                     $.getScript("../extensions/ki_gantt/js/gantt_loader.js", () => {
 
-                        InitGantt('day', '{/literal}{$kga.lang.language}{literal}');
+                        InitGantt('week', '{/literal}{$kga.lang.language}{literal}');
 
                         GetPcts(true, true);
 
-                        document.getElementById('import_xls_file_selector').addEventListener('change', ImportFile, false);
+                        document.getElementById('import_xml_file_selector').addEventListener('change', ImportFile, false);
 
                     });
                 });
@@ -33,9 +33,7 @@
             <!-- ...actual chart... -->
         </div>
 
-        <div id = 'loaded_gantt_chart' class = 'gantt'>
-
-        </div>
+        <div id = 'loaded_gantt_chart' class = 'gantt'></div>
     </body>
 </html>
 

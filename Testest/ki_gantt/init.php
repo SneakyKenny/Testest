@@ -15,7 +15,7 @@ $tpl->compile_dir = 'compile/';
 
 $tpl->assign('kga', $kga);
 
-// Create a <select> element to choose the projects.
+// Create a <select> element to chosse the projects.
 $sel = makeSelectBox("pct",$kga['usr']['usr_grp']);
 $tpl->assign('sel_pct_names', $sel[0]);
 $tpl->assign('sel_pct_IDs', $sel[1]);

@@ -6,6 +6,15 @@ var format, lang;
 
 var pcts_save = [], evts_save = [];
 
+/*
+ * Fonction appelée lors du fermement du dropdown permettant la sélection des projets à afficher
+ *
+ * @params:
+ *      - pct_array (int[]): liste des IDs des pcts à charger dans le gantt
+ *
+ * @return: void
+ */
+
 function OnChangeSelection(pct_array) {
     if (pct_array)
     {
@@ -27,8 +36,15 @@ function OnChangeSelection(pct_array) {
     }
 }
 
-// c/c de la doc
-// ajout des langages
+/*
+ * Initialise le gantt en lui précisant le langage à utiliser ainsi que quelques paramètres de base.
+ *
+ * @params:
+ *      - _format (string): 'day', 'week', 'month': le format à utiliser pour l'affichage par défault du gantt
+ *      - _ lang (string): 'en', 'fr': le langage à utiliser pour le gantt
+ *
+ * @return: void
+ */
 function InitGantt(_format, _lang) {
     //TODO: élargir les colonnes et en afficher plus
     if (_format)
@@ -57,6 +73,10 @@ function InitGantt(_format, _lang) {
 
     g.setShowEndWeekDate(0);
 }
+
+/*
+ * La même chose qu'au dessus, pour le gantt que l'on charge en sélectionnant les projets
+ */
 
 function InitSecondGantt() {
     var g2 = new JSGantt.GanttChart(document.getElementById('loaded_gantt_chart'), format);
@@ -120,6 +140,7 @@ function GetPcts(isOpenedByDefault, isDisplay) {
  * @params:
  *      - pcts      (JSONArray): La liste des projets à ajouter et afficher
  *      - isOpenedByDefault: Doit-on déplier ou non les projets afin de montrer les postes concernés ?
+ *      - isReset (bool): si le gantt doit être réinitialisé
  *
  * @return: void
  */

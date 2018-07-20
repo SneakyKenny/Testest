@@ -1,19 +1,15 @@
 <html>
     <head>
-        <!-- Gantt -->
         <link rel="stylesheet" type="text/css" href="../libraries/jQueryGantt/jsgantt.css" />
         <script language="javascript" src="../libraries/jQueryGantt/jsgantt.js"></script>
-        <!-- /Gantt -->
     </head>
     <body>
         {literal}
             <script type="text/javascript">
 
-                // lors du chargement de la page
                 $(document).ready(function () {
                     gt_ext_onload();
 
-                    // charger le loader du gantt, l'initialiser et ajouter les projets
                     $.getScript("../extensions/ki_gantt/js/gantt_loader.js", () => {
 
                         InitGantt('week', '{/literal}{$kga.lang.language}{literal}');

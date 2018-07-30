@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+
+</head>
+
+<body id="kimai_strass_ext_body">
+
+    <h1>Kimai - Strass</h1>
+    <div id="logout" style="display: none;"><img src="logout.png" alt="logout" title="Vous déconnecter de l'extension va également vous déconnecter de votre kimai !" /></div>
+
+    <div id="loading" style="display: none;">
+        Chargement, veuillez patienter !
+    </div>
+
+    <div id="login_form_container" style="display: none;">
+        <input type="text" value="Login" id="kimai_login_login" class="kimai_input"/>
+        <input type="password" value="Password" id="kimai_login_password" class="kimai_input"/>
+        <button id="kimai_login_button" class="kimai_button">Submit</button>
+    </div>
+
+    <div id="login_failed_container" style="display: none;color: red;">
+        <p>Login failed ! Check your creditentials !</p>
+    </div>
+
+    <div id="time_registration_form_container" style="display: none;">
+        <div id="dropdowns">
+            <div id="pct_dropdown">
+                <p>Select a project</p>
+                <select id="kimai_pct_sel"></select>
+                <br/>
+            </div>
+            <div id="evt_dropdown" style="display: none;">
+                <p>Select a task</p>
+                <select id="kimai_evt_sel"></select>
+                <br/>
+            </div>
+        </div>
+
+        <div id="alt_to_dropdowns">
+            <p id="current_pct"></p>
+            <p id="current_evt"></p>
+        </div>
+
+        <p id="timer"></p>
+
+        <button id="start_registration" value="register" class="kimai_button">Start</button>
+        <button id="end_registration" value="End_registration" class="kimai_button">End</button>
+    </div>
+
+    <div id="some"></div>
+
+    <script src="popup.js" type="text/javascript"></script>
+
+</body>
+</html>

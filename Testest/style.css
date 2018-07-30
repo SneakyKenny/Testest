@@ -1,0 +1,36 @@
+#kimai_strass_ext_body {
+    width: 250px;
+    text-align: center;
+}
+
+.kimai_input {
+    padding: 5px;
+    margin: 5px;
+}
+
+.kimai_button {
+    height: 30px;
+    width: 125px;
+    margin: 5px;
+}
+
+#time_registration_form_container {
+    text-align: center;
+}
+
+#kimai_pct_sel {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#dropdowns {
+    width: 90%;
+    margin: 0 5px 5px 5px;
+    padding: 0 5px 5px 5px;
+}
+
+#logout {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

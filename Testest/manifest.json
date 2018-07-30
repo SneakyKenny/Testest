@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    
+    "name": "Kimai_Strass_ext",
+    "description": "L'extension Chrome pour le Kimai de Strass.",
+    "version": "1.0",
+    
+    "browser_action" : {
+        "default_icon" : "default.png",
+        "default_popup" : "popup.html"
+    },
+    
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "jquery-1.9.1.min.js"
+            ],
+            "css": ["style.css"],
+            "run_at": "document_end"
+        }
+    ],
+    
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "activeTab"
+    ]
+}
